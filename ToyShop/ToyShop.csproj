@@ -76,11 +76,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\HistoryOfOrdersPages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MenuPages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\RegistrationPages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ShoppingBasketPages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -92,11 +100,17 @@
     <Compile Include="Pages\CatalogPages.xaml.cs">
       <DependentUpon>CatalogPages.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\HistoryOfOrdersPages.xaml.cs">
+      <DependentUpon>HistoryOfOrdersPages.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MenuPages.xaml.cs">
       <DependentUpon>MenuPages.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegistrationPages.xaml.cs">
       <DependentUpon>RegistrationPages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ShoppingBasketPages.xaml.cs">
+      <DependentUpon>ShoppingBasketPages.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -131,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\Логотип магазина.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\КнопкаBack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

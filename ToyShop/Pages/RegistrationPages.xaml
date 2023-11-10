@@ -68,7 +68,7 @@
                 Height="45"
                 Width="350"
                 Style="{StaticResource tbStyle}"
-                Text="Введите Логин"
+                Text="Введите Логин" GotFocus="TbLogin_GotFocus" LostFocus="TbLogin_LostFocus"
                 
                 />
                 
@@ -93,7 +93,7 @@
                 Height="45"
                 Width="350"
                 Opacity="0.75"
-                Style="{StaticResource tbStyle}"  />
+                Style="{StaticResource tbStyle}" GotFocus="TbEmail_GotFocus" LostFocus="TbEmail_LostFocus"  />
 
                 <TextBlock 
                  Text="Фамилия:" 
@@ -116,7 +116,7 @@
                 Height="45"
                 Width="350"
                 Opacity="0.75"
-                Style="{StaticResource tbStyle}"  />
+                Style="{StaticResource tbStyle}" GotFocus="TbLastName_GotFocus" LostFocus="TbLastName_LostFocus"  />
 
 
                 <TextBlock 
@@ -140,7 +140,7 @@
                 Height="45"
                 Width="350"
                 Opacity="0.75"
-                Style="{StaticResource tbStyle}"  />
+                Style="{StaticResource tbStyle}" GotFocus="TbFirsName_GotFocus" LostFocus="TbFirsName_LostFocus"  />
 
                 
                 <TextBlock 
@@ -164,7 +164,7 @@
                 Height="45"
                 Width="350"
                 Opacity="0.75"
-                Style="{StaticResource tbStyle}"  />
+                Style="{StaticResource tbStyle}" GotFocus="TbPatronymic_GotFocus" LostFocus="TbPatronymic_LostFocus"  />
 
                 
                 <TextBlock 
@@ -189,7 +189,7 @@
                 Height="45"
                 Width="350"
                 Opacity="0.75"
-                Style="{StaticResource tbStyle}" 
+                Style="{StaticResource tbStyle}" GotFocus="TbPhoneNumber_GotFocus" LostFocus="TbPhoneNumber_LostFocus" 
                  />
 
                 <TextBlock 
@@ -244,15 +244,16 @@
                  />
 
 
-                <PasswordBox
-                x:Name="PbPassword"
+                <TextBox
+                x:Name="TbPassword"
+                Text="Введите Пароль"   
                 Grid.Column="2"
                 Grid.Row="9"
-                Width="350"
-                Height="45"
-                HorizontalAlignment="Right"
+                HorizontalAlignment="Left"
                 VerticalAlignment="Center"
-                Style="{StaticResource PasswordBoxStyle1}"/>
+                Height="45"
+                Width="350"
+                Style="{StaticResource tbStyle}" GotFocus="TbPassword_GotFocus" LostFocus="TbPassword_LostFocus"/>
 
 
                 <Button
@@ -264,8 +265,12 @@
                 Width="350"
                 Height="50"
                 FontSize="30"
-                Style="{StaticResource BtnStyle}"
+                Style="{StaticResource BtnStyle}" Click="BtnRegistration_Click"
                 />
+
+        <Button
+            x:Name="BtnBack" Click="BtnBack_Click"/>
+
 
 
     </Grid>

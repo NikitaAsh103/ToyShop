@@ -76,8 +76,8 @@
                 
                 />
 
-        <TextBox
-            Style="{StaticResource TBStyle }" 
+        <TextBox x:Name="TbLogin"
+            Style="{StaticResource tbStyle }" 
             Grid.Column="1"
             Grid.ColumnSpan="3"
             Grid.Row="2"
@@ -86,11 +86,12 @@
             Margin="0 0 0 15"
             Text=" Логин" 
             FontSize="36"
-            TextAlignment="Left"
+            TextAlignment="Left" 
+            GotFocus="TbLogin_GotFocus" LostFocus="TbLogin_LostFocus"
             />
 
-        <TextBox
-            Style="{StaticResource TBStyle }" 
+        <TextBox x:Name="TbPassword"
+            Style="{StaticResource tbStyle }" 
             Grid.Column="1"
             Grid.ColumnSpan="3"
             Grid.Row="3"
@@ -98,8 +99,8 @@
             VerticalAlignment="Center"
             Margin="0 0 0 15"
             Text=" Пароль" 
-            FontSize="36"
-            TextAlignment="Left"
+            FontSize="36" GotFocus="TbPassword_GotFocus" LostFocus="TbPassword_LostFocus"
+            
               
             
             />

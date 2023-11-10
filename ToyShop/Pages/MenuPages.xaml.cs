@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToyShop.ClassHelper;
+
 
 namespace ToyShop.Pages
 {
@@ -23,6 +25,21 @@ namespace ToyShop.Pages
         public MenuPages()
         {
             InitializeComponent();
+        }
+
+        private void BtnCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            FrameData.frame.Navigate(new CatalogPages());
+        }
+
+        private void BtnHistoryOfOrders_Click(object sender, RoutedEventArgs e)
+        {
+            FrameData.frame.Navigate(new HistoryOfOrdersPages());
+        }
+
+        private void BtnShoppingBasket_Click(object sender, RoutedEventArgs e)
+        {
+            FrameData.frame.Navigate(new ShoppingBasketPages());
         }
     }
 }

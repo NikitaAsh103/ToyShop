@@ -39,27 +39,27 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             />
-        <Button
+        <Button x:Name="BtnCatalog"
             Grid.Column="2"
             Grid.ColumnSpan="4"
             Grid.Row="3"
             Content="Каталог товаров"
-            Style="{StaticResource BtnStyle }" 
+            Style="{StaticResource BtnStyle }" Click="BtnCatalog_Click" 
             />
-        <Button
+        <Button x:Name="BtnHistoryOfOrders"
             Grid.Column="2"
             Grid.ColumnSpan="4"
             Grid.Row="4"
             Content="История заказов"
-            Style="{StaticResource BtnStyle }" 
+            Style="{StaticResource BtnStyle }" Click="BtnHistoryOfOrders_Click" 
             />
 
-        <Button
+        <Button x:Name="BtnShoppingBasket"
             Grid.Column="2"
             Grid.ColumnSpan="4"
             Grid.Row="5"
             Content="Корзина"
-            Style="{StaticResource BtnStyle }" 
+            Style="{StaticResource BtnStyle }" Click="BtnShoppingBasket_Click" 
             />
         
         <Button
