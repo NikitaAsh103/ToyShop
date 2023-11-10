@@ -41,5 +41,10 @@ namespace ToyShop.Pages
         {
             FrameData.frame.Navigate(new ShoppingBasketPages());
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            FrameData.frame.Navigate(new ProfilePages());
+        }
     }
 }

@@ -67,7 +67,7 @@
             Grid.ColumnSpan="4"
             Grid.Row="6"
             Content="Профиль"
-            Style="{StaticResource BtnStyle }" 
+            Style="{StaticResource BtnStyle }" Click="Button_Click" 
             />
 
 
