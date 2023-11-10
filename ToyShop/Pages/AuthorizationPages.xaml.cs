@@ -28,6 +28,11 @@ namespace ToyShop.Pages
 
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
+            FrameData.frame.Navigate(new MenuPages());
+        }
+
+        private void BtnRegistration_Click(object sender, RoutedEventArgs e)
+        {
             FrameData.frame.Navigate(new RegistrationPages());
         }
     }

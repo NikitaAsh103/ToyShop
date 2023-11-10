@@ -9,13 +9,67 @@
       Title="MenuPages">
 
     <Grid Background="#FFE6C2CE">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
         <TextBlock 
-            HorizontalAlignment="Left" 
-            Margin="454,35,0,0" 
-            TextWrapping="Wrap" 
-            Text="TextBlock" 
-            VerticalAlignment="Top"/>
+            Grid.Column="2"
+            Grid.ColumnSpan="4"
+            Grid.Row="1"
+            FontSize="70"
+            Text="Меню" 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            />
+        <Button
+            Grid.Column="2"
+            Grid.ColumnSpan="4"
+            Grid.Row="3"
+            Content="Каталог товаров"
+            Style="{StaticResource BtnStyle }" 
+            />
+        <Button
+            Grid.Column="2"
+            Grid.ColumnSpan="4"
+            Grid.Row="4"
+            Content="История заказов"
+            Style="{StaticResource BtnStyle }" 
+            />
+
+        <Button
+            Grid.Column="2"
+            Grid.ColumnSpan="4"
+            Grid.Row="5"
+            Content="Корзина"
+            Style="{StaticResource BtnStyle }" 
+            />
+        
+        <Button
+            Grid.Column="2"
+            Grid.ColumnSpan="4"
+            Grid.Row="6"
+            Content="Профиль"
+            Style="{StaticResource BtnStyle }" 
+            />
+
 
     </Grid>
 </Page>

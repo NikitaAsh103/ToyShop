@@ -10,6 +10,8 @@
             <Setter Property="Background" Value="#FFADCACE"/>
             <Setter Property="FontSize" Value="22"/>
             <Setter Property="Height" Value="50"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
             <Style.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="15"/>

@@ -52,25 +52,27 @@
             VerticalAlignment="Center" 
             Foreground="#FF383838" FontWeight="Bold"/>
 
-        <Button Style="{StaticResource BtnStyle }" 
-                Grid.ColumnSpan="3"
-                HorizontalAlignment="Left"
+        <Button x:Name="BtnRegistration" Style="{StaticResource BtnStyle }" 
+                Grid.ColumnSpan="2"
                 Width="220"
-                VerticalAlignment="Bottom"
+                VerticalAlignment="Center"
                 Content="Зарегистрироваться" 
-                Grid.Row="3" 
-                Margin="55,0,0,24" Height="34" Grid.Column="1" 
+                Grid.Row="4" 
+                HorizontalAlignment="Left"
+                Grid.Column="1" Click="BtnRegistration_Click" 
                 />
 
-        <Button x:Name="BtnEnter" Style="{StaticResource BtnStyle }" 
+        <Button x:Name="BtnEnter" 
+                Style="{StaticResource BtnStyle }" 
                 Grid.Column="2"
-                HorizontalAlignment="Center"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Right"
                 Width="120"
-                VerticalAlignment="Top"
+                VerticalAlignment="Center"
                 Content="Войти" 
                 Grid.Row="4" 
-                Margin="0,75,0,0" Click="BtnEnter_Click" 
-                BorderThickness="2"
+                Click="BtnEnter_Click" 
+                
                 
                 />
 
