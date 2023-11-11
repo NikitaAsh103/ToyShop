@@ -28,5 +28,10 @@ namespace ToyShop
             FrameData.frame = MainFrame;
             FrameData.frame.Navigate(new AuthorizationPages());
         }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

@@ -9,255 +9,145 @@
       Title="RegistrationPages">
 
     <Grid Background="#FFE6C2CE">
-        
-        
-        
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="350*"/>
         </Grid.ColumnDefinitions>
-        
-                
-                <TextBlock 
-                 Text="Регистрация" 
-                 FontSize="40" 
-                 TextAlignment="Center" 
-                 Foreground="Black"
-                 Grid.Column="0"
-                 Grid.ColumnSpan="3"
-                 Grid.Row="0"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                      />
-                
-                <TextBlock 
-                 Text="Логин:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
+
+        <TextBlock Text="Логин:" 
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
+
+        <TextBox x:Name="TbLogin"
+                 Grid.Column="2"
                  Grid.Row="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                 Grid.Column="1"
-                 HorizontalAlignment="Left"
-                 
-                      />
-                
-                <TextBox
-                x:Name="TbLogin"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-                Grid.Column="2"
-                Grid.Row="1"
-                Height="45"
-                Width="350"
-                Style="{StaticResource tbStyle}"
-                Text="Введите Логин" GotFocus="TbLogin_GotFocus" LostFocus="TbLogin_LostFocus"
-                
-                />
-                
-                <TextBlock 
-                Text="Email:" 
-                FontSize="25" 
-                TextAlignment="Left" 
-                Foreground="Black"
-                Grid.Row="2"
-                Grid.Column="1"
-                VerticalAlignment="Center"
-                FontFamily="Comic Sans MS"
-                      />
-                
-                <TextBox
-                x:Name="TbEmail"
-                Text="Введите Email"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="2"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}" GotFocus="TbEmail_GotFocus" LostFocus="TbEmail_LostFocus"  />
+                 Style="{StaticResource tbxCellStyle}"
+                 GotFocus="TbLogin_GotFocus"
+                 LostFocus="TbLogin_LostFocus"/>
 
-                <TextBlock 
-                 Text="Фамилия:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
+
+        <TextBlock Text="Email:" 
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
+
+        <TextBox x:Name="TbEmail"
+                 Grid.Column="2"
+                 Grid.Row="2"
+                 Style="{StaticResource tbxCellStyle}" 
+                 GotFocus="TbEmail_GotFocus"
+                 LostFocus="TbEmail_LostFocus"/>
+
+
+        <TextBlock Text="Фамилия:" 
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
+
+        <TextBox x:Name="TbLastName"
+                 Grid.Column="2"
                  Grid.Row="3"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                      />
-                
-                <TextBox
-                x:Name="TbLastName"
-                Text="Введите Фамилию"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="3"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}" GotFocus="TbLastName_GotFocus" LostFocus="TbLastName_LostFocus"  />
+                 Style="{StaticResource tbxCellStyle}"
+                 GotFocus="TbLastName_GotFocus"
+                 LostFocus="TbLastName_LostFocus"/>
 
 
-                <TextBlock 
-                Text="Имя:" 
-                FontSize="25" 
-                TextAlignment="Left" 
-                Foreground="Black"
-                Grid.Row="4"
-                Grid.Column="1"
-                VerticalAlignment="Center"
-                FontFamily="Comic Sans MS"
-                      />
-                
-                <TextBox
-                x:Name="TbFirsName"
-                Text="Введите Имя"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="4"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}" GotFocus="TbFirsName_GotFocus" LostFocus="TbFirsName_LostFocus"  />
+        <TextBlock Text="Имя:" 
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
-                
-                <TextBlock 
-                 Text="Отчество:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
+        <TextBox x:Name="TbFirsName"
+                 Grid.Column="2"
+                 Grid.Row="4"
+                 Style="{StaticResource tbxCellStyle}"
+                 GotFocus="TbFirsName_GotFocus"
+                 LostFocus="TbFirsName_LostFocus"/>
+
+
+        <TextBlock Text="Отчество:" 
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
+
+        <TextBox x:Name="TbPatronymic"
+                 Grid.Column="2"
                  Grid.Row="5"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                      />
+                 Style="{StaticResource tbxCellStyle}"
+                 GotFocus="TbPatronymic_GotFocus"
+                 LostFocus="TbPatronymic_LostFocus"/>
 
-                <TextBox
-                x:Name="TbPatronymic"
-                Text="Введите Oтчество"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="5"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}" GotFocus="TbPatronymic_GotFocus" LostFocus="TbPatronymic_LostFocus"  />
 
-                
-                <TextBlock 
-                Text="Телефон:" 
-                FontSize="25" 
-                TextAlignment="Left" 
-                Foreground="Black"
-                Grid.Row="6"
-                Grid.Column="1"
-                VerticalAlignment="Center"
-                FontFamily="Comic Sans MS"
-                      />
-                
-                
-                <TextBox
-                x:Name="TbPhoneNumber"
-                Text="Введите Номер"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="6"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}" GotFocus="TbPhoneNumber_GotFocus" LostFocus="TbPhoneNumber_LostFocus" 
-                 />
+        <TextBlock Text="Телефон:" 
+                   Grid.Row="6"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
-                <TextBlock 
-                 Text="Дата рождения:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
-                 Grid.Row="8"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"/>
-
-                <DatePicker 
-                 Name="DPDateOfBirthday" 
-                 BorderThickness="0"
-                 SelectedDateFormat="Short" 
-                 Grid.Row="8"
+        <TextBox x:Name="TbPhoneNumber"
                  Grid.Column="2"
-                 Height="30"
-                 Width="200"/>
+                 Grid.Row="6"
+                 Style="{StaticResource tbxCellStyle}" 
+                 GotFocus="TbPhoneNumber_GotFocus"
+                 LostFocus="TbPhoneNumber_LostFocus"/>
 
 
+        <TextBlock Text="Дата рождения:" 
+                   Grid.Row="8"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
-                <TextBlock 
-                 Text="Пол:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
-                 Grid.Row="7"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"/>
+        <DatePicker Name="DPDateOfBirthday"
+                    VerticalAlignment="Center"
+                    BorderThickness="0" 
+                    Grid.Row="8"
+                    Grid.Column="2"
+                    FontSize="25"
+                    Padding="3 0"
+                    Width="200"/>
 
 
-                <ComboBox
-                 x:Name="CmbGender"
-                 Width="100"
-                 Height="40"
+        <TextBlock Text="Пол:"
+                   Grid.Row="7"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
+
+        <ComboBox x:Name="CmbGender"
+                  Width="100"
+                  Height="40"
+                  Grid.Column="2"
+                  Grid.Row="7"/>
+
+
+        <TextBlock Text="Пароль:" 
+                   Grid.Row="9"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
+
+
+        <TextBox x:Name="TbPassword"  
                  Grid.Column="2"
-                 Grid.Row="7"/>
-
-
-                <TextBlock 
-                 Text="Пароль:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
                  Grid.Row="9"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                 />
+                 Style="{StaticResource tbxCellStyle}"
+                 GotFocus="TbPassword_GotFocus"
+                 LostFocus="TbPassword_LostFocus"/>
 
-
-                <TextBox
-                x:Name="TbPassword"
-                Text="Введите Пароль"   
-                Grid.Column="2"
-                Grid.Row="9"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Height="45"
-                Width="350"
-                Style="{StaticResource tbStyle}" GotFocus="TbPassword_GotFocus" LostFocus="TbPassword_LostFocus"/>
-
-
-                <Button
-                x:Name="BtnRegistration"
+        <Button x:Name="BtnRegistration"
                 Grid.Row="10"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
@@ -265,18 +155,18 @@
                 Width="350"
                 Height="50"
                 FontSize="30"
-                Style="{StaticResource BtnStyle}" Click="BtnRegistration_Click"
-                />
+                Style="{StaticResource BtnStyle}" 
+                Click="BtnRegistration_Click"/>
 
-        <Button 
-            x:Name="BtnBack"
-            Width="50"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Left"
-            BorderBrush="{x:Null}" 
-            Foreground="{x:Null}" Click="BtnBack_Click_1" 
-            >
+        <Button x:Name="BtnBack"
+                Width="50"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Left"
+                BorderBrush="{x:Null}" 
+                Foreground="{x:Null}" 
+                Click="BtnBack_Click_1">
+            
             <Button.Background>
                 <ImageBrush ImageSource="/res/КнопкаBack.png" 
                             Stretch="UniformToFill"/>

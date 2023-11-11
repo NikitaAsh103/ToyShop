@@ -5,13 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ToyShop.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="600"
+      d:DesignHeight="900"
+      d:DesignWidth="600"
       Title="ProfilePages">
 
     <Grid Background="#FFE6C2CE">
-
-
-
 
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -26,226 +24,125 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="350*"/>
         </Grid.ColumnDefinitions>
 
+        <TextBlock Text="Профиль" 
+                   Grid.ColumnSpan="3"
+                   VerticalAlignment="Center"
+                   TextAlignment="Center" 
+                   Foreground="Black"
+                   FontSize="40" 
+                   FontFamily="Comic Sans MS"/>
 
-        <TextBlock 
-                 Text="Профиль" 
-                 FontSize="40" 
-                 TextAlignment="Center" 
-                 Foreground="Black"
-                 Grid.Column="0"
-                 Grid.ColumnSpan="3"
-                 Grid.Row="0"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                      />
+        <TextBlock Text="Логин:" 
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
-        <TextBlock 
-                 Text="Логин:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
+        <TextBox x:Name="TbLogin"
+                 Grid.Column="2"
                  Grid.Row="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                 Grid.Column="1"
-                 HorizontalAlignment="Left"
-                 
-                      />
+                 Style="{StaticResource tbxCellStyle}"/>
+        
 
-        <TextBox
-                x:Name="TbLogin"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-                Grid.Column="2"
-                Grid.Row="1"
-                Height="45"
-                Width="350"
-                Style="{StaticResource tbStyle}"
-                
-                />
+        <TextBlock Text="Email:" 
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
-        <TextBlock 
-                Text="Email:" 
-                FontSize="25" 
-                TextAlignment="Left" 
-                Foreground="Black"
-                Grid.Row="2"
-                Grid.Column="1"
-                VerticalAlignment="Center"
-                FontFamily="Comic Sans MS"
-                      />
+        <TextBox x:Name="TbEmail"
+                 Grid.Column="2"
+                 Grid.Row="2"
+                 Style="{StaticResource tbxCellStyle}" />
+        
 
-        <TextBox
-                x:Name="TbEmail"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="2"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}" />
+        <TextBlock Text="Фамилия:" 
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
-        <TextBlock 
-                 Text="Фамилия:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
+        <TextBox x:Name="TbLastName"
+                 Grid.Column="2"
                  Grid.Row="3"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                      />
+                 Style="{StaticResource tbxCellStyle}"/>
+        
 
-        <TextBox
-                x:Name="TbLastName"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="3"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}"/>
+        <TextBlock Text="Имя:" 
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
-        <TextBlock 
-                Text="Имя:" 
-                FontSize="25" 
-                TextAlignment="Left" 
-                Foreground="Black"
-                Grid.Row="4"
-                Grid.Column="1"
-                VerticalAlignment="Center"
-                FontFamily="Comic Sans MS"
-                      />
+        <TextBox x:Name="TbFirsName"
+                 Grid.Column="2"
+                 Grid.Row="4"
+                 Style="{StaticResource tbxCellStyle}" />
+        
 
-        <TextBox
-                x:Name="TbFirsName"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="4"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}" />
+        <TextBlock Text="Отчество:" 
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
-        <TextBlock 
-                 Text="Отчество:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
+        <TextBox x:Name="TbPatronymic"
+                 Grid.Column="2"
                  Grid.Row="5"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                      />
+                 Style="{StaticResource tbxCellStyle}"/>
+        
 
-        <TextBox
-                x:Name="TbPatronymic"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="5"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}"/>
+        <TextBlock Text="Телефон:" 
+                   Grid.Row="6"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
-        <TextBlock 
-                Text="Телефон:" 
-                FontSize="25" 
-                TextAlignment="Left" 
-                Foreground="Black"
-                Grid.Row="6"
-                Grid.Column="1"
-                VerticalAlignment="Center"
-                FontFamily="Comic Sans MS"
-                      />
-
-
-        <TextBox
-                x:Name="TbPhoneNumber"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Grid.Column="2"
-                Grid.Row="6"
-                Height="45"
-                Width="350"
-                Opacity="0.75"
-                Style="{StaticResource tbStyle}" />
-
-        <TextBlock 
-                 Text="Дата рождения:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
-                 Grid.Row="8"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"/>
-
-        <DatePicker 
-                 Name="DPDateOfBirthday" 
-                 BorderThickness="0"
-                 SelectedDateFormat="Short" 
-                 Grid.Row="8"
+        <TextBox x:Name="TbPhoneNumber"
                  Grid.Column="2"
-                 Height="30"
-                 Width="200"/>
+                 Grid.Row="6"
+                 Style="{StaticResource tbxCellStyle}" />
+        
+
+        <TextBlock Text="Дата рождения:" 
+                   Grid.Row="8"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
+
+        <DatePicker Name="DPDateOfBirthday"
+                    VerticalAlignment="Center"
+                    BorderThickness="0" 
+                    Grid.Row="8"
+                    Grid.Column="2"
+                    FontSize="25"
+                    Padding="3 0"
+                    Width="200"/>
+        
+
+        <TextBlock Text="Пол:"
+                   Grid.Row="7"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
+
+        <ComboBox x:Name="CmbGender"
+                  Width="100"
+                  Height="40"
+                  Grid.Column="2"
+                  Grid.Row="7"/>
 
 
-
-        <TextBlock 
-                 Text="Пол:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
-                 Grid.Row="7"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"/>
+        <TextBlock Text="Пароль:" 
+                   Grid.Row="9"
+                   Grid.Column="1"
+                   Style="{StaticResource txtCellStyle}"/>
 
 
-        <ComboBox
-                 x:Name="CmbGender"
-                 Width="100"
-                 Height="40"
+        <TextBox x:Name="TbPassword"  
                  Grid.Column="2"
-                 Grid.Row="7"/>
-
-
-        <TextBlock 
-                 Text="Пароль:" 
-                 FontSize="25" 
-                 TextAlignment="Left" 
-                 Foreground="Black"
                  Grid.Row="9"
-                 Grid.Column="1"
-                 VerticalAlignment="Center"
-                 FontFamily="Comic Sans MS"
-                 />
+                 Style="{StaticResource tbxCellStyle}"/>
 
-
-        <TextBox
-                x:Name="TbPassword"  
-                Grid.Column="2"
-                Grid.Row="9"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Height="45"
-                Width="350"
-                Style="{StaticResource tbStyle}"/>
-
-        <Button
-                x:Name="BtnEdit"
+        <Button x:Name="BtnEdit"
                 Grid.Row="10"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
@@ -253,29 +150,27 @@
                 Width="350"
                 Height="50"
                 FontSize="30"
-                Style="{StaticResource BtnStyle}" 
+                Style="{StaticResource BtnStyle}" Click="BtnEdit_Click" 
                 />
 
-        <Button 
-            x:Name="BtnBack"
-            Width="50"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Left"
-            BorderBrush="{x:Null}" 
-            Foreground="{x:Null}" 
-            Click="BtnBack_Click">
+        <Button x:Name="BtnBack"
+                Width="50"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Left"
+                BorderBrush="{x:Null}" 
+                Foreground="{x:Null}" 
+                Click="BtnBack_Click">
+
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
 
             <Button.Background>
                 <ImageBrush ImageSource="/res/КнопкаBack.png" 
-                            Stretch="UniformToFill"/>
+                                Stretch="UniformToFill"/>
             </Button.Background>
+
         </Button>
-
-
-
     </Grid>
 </Page>

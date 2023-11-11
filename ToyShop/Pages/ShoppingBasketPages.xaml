@@ -14,7 +14,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Корзина товаров"
@@ -23,10 +23,12 @@
 
         <Button 
             x:Name="BtnBack"
-            Width="50"
+            Width="40"
             HorizontalAlignment="Left" 
             BorderBrush="{x:Null}" 
-            Foreground="{x:Null}" Click="BtnBack_Click">
+            Foreground="{x:Null}"
+            Margin="5 5 0 0"
+            Click="BtnBack_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/res/КнопкаBack.png" 
                             Stretch="UniformToFill"/>
@@ -66,23 +68,37 @@
                                    Width="90">
 
                             </Image>
-                            <TextBlock Text="название"
+                            <TextBlock Text="{Binding Name}"
                                        Margin="5 0 0 0"/>
-                            <TextBlock Text="Цена"
+                            <TextBlock Text="{Binding Price}"
                                        FontWeight="Bold"
                                        Margin="5 0 0 0"/>
 
                             <Button x:Name="BtnMore" 
-                                    Content="Добавить"
+                                    Content="Удалить"
                                     Margin="10 10 10 0"
-                                    />
+                                    Click="BtnDelete_Click"/>
                         </StackPanel>
 
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
-
         </ListView>
+
+        <Button x:Name="BtnBuy"
+                Content="Купить всё"
+                Grid.Row="3"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Right"
+                FontSize="25"
+                Margin="0 0 30 0"
+                Padding="10 5 ">
+            
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>

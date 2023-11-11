@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToyShop.ClassHelper;
+using ToyShop.Models;
 using static ToyShop.ClassHelper.FrameData;
 
 namespace ToyShop.Pages
@@ -24,6 +26,8 @@ namespace ToyShop.Pages
         public HistoryOfOrdersPages()
         {
             InitializeComponent();
+            LvProduct.ItemsSource = DBClass.Context.Product
+                    .SqlQuery("""SELECT * FROM Product p JOIN OrderProduct""")
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

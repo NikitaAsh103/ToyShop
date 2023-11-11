@@ -9,6 +9,7 @@
         Height="900" 
         Width="600"
         WindowStartupLocation="CenterScreen"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
         ResizeMode="NoResize">
 
     <Grid>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToyShop.ClassHelper;
 using static ToyShop.ClassHelper.FrameData;
 
 namespace ToyShop.Pages
@@ -24,11 +25,21 @@ namespace ToyShop.Pages
         public ShoppingBasketPages()
         {
             InitializeComponent();
+            LvProduct.ItemsSource = UserCache.productsCart;
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             frame.GoBack();
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var boundData = (Models.Product)((Button)sender).DataContext;
+
+            UserCache.productsCart.Remove(boundData);
+
+            LvProduct.ItemsSource = UserCache.productsCart;
         }
     }
 }
