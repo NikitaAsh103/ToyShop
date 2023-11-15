@@ -41,5 +41,38 @@ namespace ToyShop.Pages
 
             LvProduct.ItemsSource = UserCache.productsCart;
         }
+
+        private void BtnBuy_Click(object sender, RoutedEventArgs e)
+        {
+            Random random = new Random();
+            int orderID;
+
+            var order = new Models.Order() { ClientID = UserCache.currentClient.ClientID, EmployeeID = random.Next(1, 50) };
+            DBClass.Context.Order.Add(order);
+            DBClass.Context.SaveChanges();
+            orderID = order.OrderID;
+
+            foreach (var item in UserCache.productsCart)
+            {
+                DBClass.Context.OrderProduct.Add(new Models.OrderProduct()
+                {
+                    OrderID = orderID,
+                    ProductID = item.ProductID,
+                    Quantity = 1
+                });
+            }
+
+            DBClass.Context.SaveChanges();
+
+            //DBClass.Context.ProductCart.Add(new Models.ProductCartOrder()
+            //{
+            //    ProductCartID = DBClass.Context.ProductCart.Where(i => i.ClientID = UserCache.currentClient.ClientID),
+
+            //});
+
+            UserCache.productsCart.Clear();
+
+            MessageBox.Show("Покупка совершена!", "Оповещение", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }

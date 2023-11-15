@@ -32,6 +32,7 @@ namespace ToyShop.Models
         public virtual DbSet<OrderProduct> OrderProduct { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductCart> ProductCart { get; set; }
+        public virtual DbSet<ProductCartOrder> ProductCartOrder { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

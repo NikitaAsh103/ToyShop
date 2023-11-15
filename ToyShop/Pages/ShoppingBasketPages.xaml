@@ -65,7 +65,8 @@
 
                         <StackPanel>
                             <Image Height="100"
-                                   Width="90">
+                                   Width="90"
+                                   Source="\res\Заглушка.png">
 
                             </Image>
                             <TextBlock Text="{Binding Name}"
@@ -92,7 +93,8 @@
                 HorizontalAlignment="Right"
                 FontSize="25"
                 Margin="0 0 30 0"
-                Padding="10 5 ">
+                Padding="10 5 "
+                Click="BtnBuy_Click">
             
             <Button.Resources>
                 <Style TargetType="Border">

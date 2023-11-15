@@ -71,9 +71,9 @@
         </EntityType>
         <EntityType Name="ProductCartOrder">
           <Key>
-            <PropertyRef Name="ProductCartID" />
-            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductCartOrderID" />
           </Key>
+          <Property Name="ProductCartOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductCartID" Type="int" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
         </EntityType>
@@ -295,7 +295,7 @@
           <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Order_Employee" FromRole="Order" ToRole="Employee" />
           <NavigationProperty Name="OrderProduct" Relationship="Self.FK_OrderProduct_Order" FromRole="Order" ToRole="OrderProduct" />
-          <NavigationProperty Name="ProductCart" Relationship="Self.ProductCartOrder" FromRole="Order" ToRole="ProductCart" />
+          <NavigationProperty Name="ProductCartOrder" Relationship="Self.FK_ProductCartOrder_Order" FromRole="Order" ToRole="ProductCartOrder" />
         </EntityType>
         <EntityType Name="OrderProduct">
           <Key>
@@ -325,7 +325,17 @@
           <Property Name="ProductCartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ClientID" Type="Int32" />
           <NavigationProperty Name="Client" Relationship="Self.FK_ProductCart_Client" FromRole="ProductCart" ToRole="Client" />
-          <NavigationProperty Name="Order" Relationship="Self.ProductCartOrder" FromRole="ProductCart" ToRole="Order" />
+          <NavigationProperty Name="ProductCartOrder" Relationship="Self.FK_ProductCartOrder_ProductCart" FromRole="ProductCart" ToRole="ProductCartOrder" />
+        </EntityType>
+        <EntityType Name="ProductCartOrder">
+          <Key>
+            <PropertyRef Name="ProductCartOrderID" />
+          </Key>
+          <Property Name="ProductCartOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCartID" Type="Int32" Nullable="false" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_ProductCartOrder_Order" FromRole="ProductCartOrder" ToRole="Order" />
+          <NavigationProperty Name="ProductCart" Relationship="Self.FK_ProductCartOrder_ProductCart" FromRole="ProductCartOrder" ToRole="ProductCart" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -409,6 +419,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProductCartOrder_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="ProductCartOrder" Type="Self.ProductCartOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="ProductCartOrder">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OrderProduct_Product">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
@@ -421,9 +443,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="ProductCartOrder">
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
-          <End Role="ProductCart" Type="Self.ProductCart" Multiplicity="*" />
+        <Association Name="FK_ProductCartOrder_ProductCart">
+          <End Role="ProductCart" Type="Self.ProductCart" Multiplicity="1" />
+          <End Role="ProductCartOrder" Type="Self.ProductCartOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCart">
+              <PropertyRef Name="ProductCartID" />
+            </Principal>
+            <Dependent Role="ProductCartOrder">
+              <PropertyRef Name="ProductCartID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Client" EntityType="Self.Client" />
@@ -433,6 +463,7 @@
           <EntitySet Name="OrderProduct" EntityType="Self.OrderProduct" />
           <EntitySet Name="Product" EntityType="Self.Product" />
           <EntitySet Name="ProductCart" EntityType="Self.ProductCart" />
+          <EntitySet Name="ProductCartOrder" EntityType="Self.ProductCartOrder" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_Client_Gender" Association="Self.FK_Client_Gender">
             <End Role="Gender" EntitySet="Gender" />
@@ -458,13 +489,17 @@
             <End Role="Order" EntitySet="Order" />
             <End Role="OrderProduct" EntitySet="OrderProduct" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProductCartOrder_Order" Association="Self.FK_ProductCartOrder_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="ProductCartOrder" EntitySet="ProductCartOrder" />
+          </AssociationSet>
           <AssociationSet Name="FK_OrderProduct_Product" Association="Self.FK_OrderProduct_Product">
             <End Role="Product" EntitySet="Product" />
             <End Role="OrderProduct" EntitySet="OrderProduct" />
           </AssociationSet>
-          <AssociationSet Name="ProductCartOrder" Association="Self.ProductCartOrder">
-            <End Role="Order" EntitySet="Order" />
+          <AssociationSet Name="FK_ProductCartOrder_ProductCart" Association="Self.FK_ProductCartOrder_ProductCart">
             <End Role="ProductCart" EntitySet="ProductCart" />
+            <End Role="ProductCartOrder" EntitySet="ProductCartOrder" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -543,6 +578,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ProductCartOrder">
+            <EntityTypeMapping TypeName="ToyStoreModel.ProductCartOrder">
+              <MappingFragment StoreEntitySet="ProductCartOrder">
+                <ScalarProperty Name="ProductCartOrderID" ColumnName="ProductCartOrderID" />
+                <ScalarProperty Name="ProductCartID" ColumnName="ProductCartID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="ToyStoreModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -554,14 +598,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="ProductCartOrder" TypeName="ToyStoreModel.ProductCartOrder" StoreEntitySet="ProductCartOrder">
-            <EndProperty Name="Order">
-              <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-            </EndProperty>
-            <EndProperty Name="ProductCart">
-              <ScalarProperty Name="ProductCartID" ColumnName="ProductCartID" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

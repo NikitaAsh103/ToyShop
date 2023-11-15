@@ -4,23 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e26272c27966448d921109b8082a918a" Name="Diagram1">
-        <EntityTypeShape EntityType="ToyStoreModel.Client" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToyStoreModel.Employee" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToyStoreModel.Gender" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToyStoreModel.Order" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToyStoreModel.OrderProduct" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToyStoreModel.Product" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToyStoreModel.ProductCart" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ToyStoreModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+      <Diagram DiagramId="cb676a6481e8471f9075cfdd3bd0dca3" Name="Diagram1">
+        <EntityTypeShape EntityType="ToyStoreModel.Client" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToyStoreModel.Employee" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToyStoreModel.Gender" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToyStoreModel.Order" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToyStoreModel.OrderProduct" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToyStoreModel.Product" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToyStoreModel.ProductCart" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToyStoreModel.ProductCartOrder" Width="1.5" PointX="7.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ToyStoreModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="ToyStoreModel.FK_Client_Gender" ManuallyRouted="false" />
         <AssociationConnector Association="ToyStoreModel.FK_Order_Client" ManuallyRouted="false" />
         <AssociationConnector Association="ToyStoreModel.FK_ProductCart_Client" ManuallyRouted="false" />
         <AssociationConnector Association="ToyStoreModel.FK_Employee_Gender" ManuallyRouted="false" />
         <AssociationConnector Association="ToyStoreModel.FK_Order_Employee" ManuallyRouted="false" />
         <AssociationConnector Association="ToyStoreModel.FK_OrderProduct_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="ToyStoreModel.FK_ProductCartOrder_Order" ManuallyRouted="false" />
         <AssociationConnector Association="ToyStoreModel.FK_OrderProduct_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="ToyStoreModel.ProductCartOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="ToyStoreModel.FK_ProductCartOrder_ProductCart" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

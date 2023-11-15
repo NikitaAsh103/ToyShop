@@ -58,7 +58,7 @@ namespace ToyShop.Pages
         //GotFocus и LostFocus
         private void TbLogin_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (TbLogin.Text == " Логин")
+            if (TbLogin.Text == "Логин")
             {
                 TbLogin.Text = "";
             }
@@ -68,13 +68,13 @@ namespace ToyShop.Pages
         {
             if (TbLogin.Text == "")
             {
-                TbLogin.Text = " Логин";
+                TbLogin.Text = "Логин";
             }
         }
 
         private void TbPassword_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (TbPassword.Text == " Пароль")
+            if (TbPassword.Text == "Пароль")
             {
                 TbPassword.Text = "";
             }
@@ -84,7 +84,7 @@ namespace ToyShop.Pages
         {
             if (TbPassword.Text == "")
             {
-                TbPassword.Text = " Пароль";
+                TbPassword.Text = "Пароль";
             }
         }
     }

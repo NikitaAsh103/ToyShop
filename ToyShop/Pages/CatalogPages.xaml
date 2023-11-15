@@ -59,9 +59,10 @@
 
                         <StackPanel>
                             <Image Height="100"
-                                   Width="90">
-
+                                   Width="90"
+                                   Source="\res\Заглушка.png">
                             </Image>
+                            
                             <TextBlock Text="{Binding Name}"
                                        Margin="5 0 0 0"/>
                             <TextBlock Text="{Binding Price}"

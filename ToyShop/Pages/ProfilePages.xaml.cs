@@ -25,6 +25,17 @@ namespace ToyShop.Pages
         public ProfilePages()
         {
             InitializeComponent();
+
+            TbLastName.Text = UserCache.currentClient.LastName;
+            TbFirsName.Text = UserCache.currentClient.FirstName;
+            TbEmail.Text = UserCache.currentClient.Email;
+            TbPassword.Text = UserCache.currentClient.Password;
+            TbPatronymic.Text = UserCache.currentClient.MiddleName;
+            CmbGender.ItemsSource = DBClass.Context.Gender.ToList();
+            TbPhoneNumber.Text = "Не задан";
+            CmbGender.SelectedIndex = UserCache.currentClient.GenderID - 1;
+
+            DisableTextBoxes();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -54,6 +65,28 @@ namespace ToyShop.Pages
             {
                 MessageBox.Show("Не удалось изменить данные( \nПопробуйте ещё раз!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void DisableTextBoxes()
+        {
+            TbLastName.IsEnabled = false;
+            TbFirsName.IsEnabled = false;
+            TbEmail.IsEnabled = false;
+            TbPassword.IsEnabled = false;
+            TbPatronymic.IsEnabled = false;
+            CmbGender.IsEnabled = false;
+            DPDateOfBirthday.IsEnabled = false;
+        }
+
+        private void EnableTextBoxes()
+        {
+            TbLastName.IsEnabled = true;
+            TbFirsName.IsEnabled = true;
+            TbEmail.IsEnabled = true;
+            TbPassword.IsEnabled = true;
+            TbPatronymic.IsEnabled = true;
+            CmbGender.IsEnabled = true;
+            DPDateOfBirthday.IsEnabled = true;
         }
     }
 }
