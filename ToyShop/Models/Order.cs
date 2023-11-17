@@ -18,7 +18,7 @@ namespace ToyShop.Models
         public Order()
         {
             this.OrderProduct = new HashSet<OrderProduct>();
-            this.ProductCartOrder = new HashSet<ProductCartOrder>();
+            this.ProductCart = new HashSet<ProductCart>();
         }
     
         public int OrderID { get; set; }
@@ -30,6 +30,6 @@ namespace ToyShop.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductCartOrder> ProductCartOrder { get; set; }
+        public virtual ICollection<ProductCart> ProductCart { get; set; }
     }
 }

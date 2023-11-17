@@ -17,7 +17,7 @@ namespace ToyShop.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductCart()
         {
-            this.ProductCartOrder = new HashSet<ProductCartOrder>();
+            this.Order = new HashSet<Order>();
         }
     
         public int ProductCartID { get; set; }
@@ -25,6 +25,6 @@ namespace ToyShop.Models
     
         public virtual Client Client { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductCartOrder> ProductCartOrder { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

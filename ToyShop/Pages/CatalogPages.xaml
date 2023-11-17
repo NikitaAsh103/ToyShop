@@ -65,7 +65,8 @@
                             
                             <TextBlock Text="{Binding Name}"
                                        Margin="5 0 0 0"/>
-                            <TextBlock Text="{Binding Price}"
+                            <TextBlock x:Name="TbPrice" 
+                                       Text="{Binding Price}"
                                        FontWeight="Bold"
                                        Margin="5 0 0 0"/>
 

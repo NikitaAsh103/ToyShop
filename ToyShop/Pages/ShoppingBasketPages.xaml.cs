@@ -13,7 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ToyShop.ClassHelper;
+using ToyShop.Models;
 using static ToyShop.ClassHelper.FrameData;
+using static ToyShop.ClassHelper.Disc;
 
 namespace ToyShop.Pages
 {
@@ -22,10 +24,21 @@ namespace ToyShop.Pages
     /// </summary>
     public partial class ShoppingBasketPages : Page
     {
+        public decimal sum = 0;
         public ShoppingBasketPages()
         {
             InitializeComponent();
+
+            foreach (var item in UserCache.productsCart)
+            {
+                sum += ProductClass.Discount(item);
+
+            }
+            tb_TotalPrice.Text = sum.ToString();
+
             LvProduct.ItemsSource = UserCache.productsCart;
+            
+
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -63,12 +76,6 @@ namespace ToyShop.Pages
             }
 
             DBClass.Context.SaveChanges();
-
-            //DBClass.Context.ProductCart.Add(new Models.ProductCartOrder()
-            //{
-            //    ProductCartID = DBClass.Context.ProductCart.Where(i => i.ClientID = UserCache.currentClient.ClientID),
-
-            //});
 
             UserCache.productsCart.Clear();
 

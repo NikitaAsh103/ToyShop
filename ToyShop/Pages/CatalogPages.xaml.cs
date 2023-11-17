@@ -26,6 +26,7 @@ namespace ToyShop.Pages
         public CatalogPages()
         {
             InitializeComponent();
+             
             LvProduct.ItemsSource = DBClass.Context.Product.ToList();
         }
 
@@ -36,6 +37,7 @@ namespace ToyShop.Pages
 
         private void BtnMore_Click(object sender, RoutedEventArgs e)
         {
+            
             var boundData = (Product)((Button)sender).DataContext;
 
             UserCache.productsCart.Add(boundData);
